@@ -12,16 +12,17 @@ import {
   Heart,
   Truck,
   Code,
+  Utensils,
 } from "lucide-react";
 
 const projects = [
   {
     title: "Pharmacy Management System",
     description:
-      "A comprehensive full-stack pharmacy system built for faculty project. Features inventory management, prescription tracking, sales analytics, and user authentication with role-based access control.",
-    category: "Full Stack Web Application",
+      "A comprehensive Front-End system built for faculty project. Features inventory management, prescription tracking, sales analytics, and user authentication with role-based access control.",
+    category: "Front-End Web Application",
     icon: Heart,
-    technologies: ["ASP.NET Core", "React", "MongoDB", "C#", "JavaScript"],
+    technologies: ["React", "HTML", "CSS", "JavaScript", "Bootstrap"],
     features: [
       "Real-time inventory tracking",
       "Prescription management",
@@ -31,29 +32,25 @@ const projects = [
     ],
     status: "Completed",
     type: "Faculty Project",
+    liveUrl: "#",
   },
   {
-    title: "Hospital Management System",
+    title: "Chef Food Restaurant",
     description:
-      "Self-learning project featuring a complete hospital management solution with patient records, appointment scheduling, staff management, and comprehensive reporting system.",
-    category: "Full Stack Web Application",
-    icon: Database,
-    technologies: [
-      "ASP.NET Core",
-      "React",
-      "MongoDB",
-      "TypeScript",
-      "Bootstrap",
-    ],
+      "A modern, responsive restaurant website featuring food ordering, menu display, and reservation system. Built with pure HTML, CSS, and SCSS for optimal performance and clean design.",
+    category: "Frontend Website",
+    icon: Utensils,
+    technologies: ["HTML5", "CSS3", "SCSS", "Responsive Design", "UI", "UX"],
     features: [
-      "Patient record management",
-      "Appointment scheduling",
-      "Staff & doctor profiles",
-      "Medical history tracking",
-      "Insurance integration",
+      "Fully responsive design",
+      "Modern UI/UX",
+      "Interactive menu",
+      "Online reservation system",
+      "Food ordering functionality",
     ],
     status: "Completed",
-    type: "Self Learning",
+    type: "Frontend Project",
+    liveUrl: "https://joe-elkade.github.io/Chef-Food-Restaurant/",
   },
   {
     title: "On-Demand Delivery Platform",
@@ -77,6 +74,7 @@ const projects = [
     ],
     status: "Completed",
     type: "Personal Project",
+    liveUrl: "#", // أضف رابط الموقع هنا
   },
 ];
 
@@ -139,14 +137,22 @@ export function Projects() {
                     <project.icon className="w-10 h-10 text-white" />
                   </div>
                   <Badge
-                    variant={
-                      project.status === "Completed" ? "default" : "secondary"
-                    }
-                    className="mb-2"
+                    className="mb-2 bg-green-600 hover:bg-green-700" // تغيير اللون إلى أخضر
                   >
                     {project.status}
                   </Badge>
                   <p className="text-white/80 text-sm">{project.type}</p>
+
+                  {/* زر View */}
+                  {project.liveUrl && (
+                    <Button
+                      className="mt-4 bg-white text-primary hover:bg-gray-100"
+                      onClick={() => window.open(project.liveUrl, "_blank")}
+                    >
+                      <Globe className="w-4 h-4 mr-2" />
+                      View Live
+                    </Button>
+                  )}
                 </div>
 
                 {/* Project Details */}

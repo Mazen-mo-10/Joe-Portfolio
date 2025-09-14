@@ -35,9 +35,9 @@ const skillCategories = [
       { name: ".NET", level: 90 },
       { name: "Django", level: 85 },
       { name: "React", level: 80 },
-      { name: "QT", level: 75 },
+      { name: "Flask ", level: 75 },
       { name: "ASP.NET Core", level: 85 },
-      { name: "Crow", level: 60 },
+      //{ name: "Crow", level: 60 },
     ],
   },
   {
